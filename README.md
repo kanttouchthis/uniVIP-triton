@@ -8,6 +8,7 @@ This project is a fork of the official implementation of our ICASSP 2025 paper, 
 and Prediction](https://arxiv.org/pdf/2503.02316). This fork adds triton kernels for bettter compatibility. 
 Performance is nearly identical and numerical precision should not be affected. 
 Triton kernels will automatically be used if triton is present, otherwise the original cupy kernels will be used.
+NOTE: The kernels have only been tested for inference.
 
 ## Introduction
 
