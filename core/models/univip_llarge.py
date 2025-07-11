@@ -4,8 +4,12 @@ import numpy
 import torch.nn.functional as F
 import torch.nn as nn
 
-from ..utils import correlation
-from ..models.softsplat import softsplat
+try:
+    from ..utils import correlation_triton as correlation
+    from ..models.softsplat import softsplat_triton as softsplat
+except:
+    from ..utils import correlation
+    from ..models.softsplat import softsplat
 
 
 #**************************************************************************************************#
