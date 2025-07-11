@@ -4,8 +4,10 @@
   <img src=figures/introduction.png width=600 />
 </div>
 
-This project is the official implementation of our ICASSP 2025 paper, [Unified Arbitrary-Time Video Frame Interpolation
-and Prediction](https://arxiv.org/pdf/2503.02316).
+This project is a fork of the official implementation of our ICASSP 2025 paper, [Unified Arbitrary-Time Video Frame Interpolation
+and Prediction](https://arxiv.org/pdf/2503.02316). This fork adds triton kernels for bettter compatibility. 
+Performance is nearly identical and numerical precision should not be affected. 
+Triton kernels will automatically be used if triton is present, otherwise the original cupy kernels will be used.
 
 ## Introduction
 
@@ -46,7 +48,14 @@ and Cuda. Run the following command to initialize the environment:
 conda create --name uniVIP python=3.7
 conda activate uniVIP
 conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.2 -c pytorch
+
+# linux
+pip3 install triton
+# windows
+pip3 install triton-windows
+# OR use the original implementation without triton
 pip3 install cupy_cuda102==9.4.0
+
 pip3 install -r requirements.txt
 ```
 
